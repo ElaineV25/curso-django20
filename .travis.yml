@@ -7,7 +7,7 @@ install:
   - pipenv sync --dev
 
 script:
-  - flake8
+  - pipenv run flake8 .
 
 after_success:
   - codecov
