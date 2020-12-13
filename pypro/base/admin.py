@@ -29,16 +29,14 @@ class UserAdmin(admin.ModelAdmin):
     change_user_password_template = None
     fieldsets = (
         (None, {'fields': ('first_name', 'email', 'password')}),
-        (_('Permissions') , {
-            'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
-        }) ,
+        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
             'fields': ('first_name', 'email', 'password1', 'password2'),
-        }) ,
+        }),
     )
     form = UserChangeForm
     add_form = UserCreationForm
