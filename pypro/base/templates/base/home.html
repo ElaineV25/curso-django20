@@ -1,41 +1,8 @@
+{% extends 'base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Python Pro</title>
-
-    <meta name="description" content="Página do Curso Python Pro">
-    <meta name="author" content="Elaine Vieira">
-    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}" />
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/scripts.js' %}"></script>
-
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'base:home' %}">Python Pro</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-
-        </ul>
-    </div>
-
-</nav>
-
+{% block title %}Python Pro - Home{% endblock title %}
+{% block body %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -44,10 +11,37 @@
                 <h2>
                     Curso de Python com Luciano Ramalho
                 </h2>
-                <p>
-                    Confira em breve mais informações sobre o curso que será ministrado pelo autor do livro
-                    <a href="https://www.oreilly.com/library/view/fluent-python/9781491946237/" target="_blank" >Python Fluente</a>
-                </p>
+                <h4 class="mt-4"> Entre na fila de espera </h4>
+                <form action="https://django.us7.list-manage.com/subscribe/post?u=7014bf6c235aa167372aec388&amp;id=78835b11e3"
+                      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                      class="form-row align-items-center"
+                      target="_blank" novalidate>
+
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="mce-EMAIL">Email</label>
+                            <input type="email" value="" name="EMAIL" class="form-control required" id="mce-EMAIL"
+                                   placeholder="exemplo@email.com">
+                        </div>
+                        <div class="col-auto">
+                            <label class="sr-only" for="mce-FNAME">Email</label>
+                            <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME" placeholder="Seu Nome">
+                        </div>
+
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                                      name="b_7014bf6c235aa167372aec388_78835b11e3"
+                                                                                                      tabindex="-1"
+                                                                                                      value=""></div>
+
+                        <div class="col-auto">
+                            <input type="submit" value="Salvar" name="subscribe"
+                                   id="mc-embedded-subscribe" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+
+
 
             </div>
             <div class="row">
@@ -58,39 +52,21 @@
                         </h5>
                         <div class="card-body">
                             <p class="card-text">
-                                <img src="{% static 'img/luciano.png' %}" alt="Foto de Luciano Ramalho" class="img-thumbnail float-left mr-3" />
+                                <img src="{% static 'img/luciano.png' %}" alt="Foto de Luciano Ramalho"
+                                     class="img-thumbnail float-left mr-3"/>
 
-                                Luciano Ramalho é programador Python desde 1998, Fellow da Python Software Foundation; é sócio do Python.pro.br – uma empresa de treinamento – e cofundador do Garoa Hacker Clube, o primeiro hackerspace do Brasil.
+                                Luciano Ramalho é programador Python desde 1998, Fellow da Python Software Foundation; é
+                                sócio do Python.pro.br – uma empresa de treinamento – e cofundador do Garoa Hacker
+                                Clube, o primeiro hackerspace do Brasil. Autor do livro <a
+                                    href="https://www.oreilly.com/library/view/fluent-python/9781491946237/"
+                                    target="_blank">Python Fluente</a>
+
                             </p>
                         </div>
-                       </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<footer class="main-footer mt-5 pt-4 text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3> Entre em Contato</h3>
-                <address>
-                    +55 12 997-411-854
-                    <br/>
-                    <a href="mailto:ramalho@python.pro,br" class="text-light">ramalho@python.pro.br</a>
-                </address>
-            </div>
-        </div>
-    </div>
-    <div class="rights pb-4">
-        <div class="container">
-        <div class="row">
-            <div class="col">
-                 {% now 'Y' %} Python Pro. Todos direitos reservados.
-                </div>
-        </div>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+{% endblock body %}
