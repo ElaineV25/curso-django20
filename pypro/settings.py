@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from functools import partial
 from pathlib import Path
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import dj_database_url
@@ -45,6 +48,8 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'pypro.base',
+    'pypro.aperitivos',
+
 ]
 
 MIDDLEWARE = [
@@ -77,6 +82,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pypro.wsgi.application'
 
+# Configuração Django Debug Toolbar
+
+INTERNAL_IPS=config('INTERNAL_IPS', cast=Csv(), default='127.0.0.1')
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -170,3 +181,9 @@ if AWS_ACCESS_KEY_ID:
 
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
+
+SENTRY_DNS=config('SENTRY_DNS' , default=None)
+
+if SENTRY_DNS:
+    sentry_sdk.init(
+        dsn=SENTRY_DNS, integrations=[DjangoIntegration()])

@@ -1,102 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base/base.html' %}
+{% load static %}
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+{% block title %}Python Pro - Home{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
+            <div class="jumbotron">
+                <h2>
+                    Curso de Python com Luciano Ramalho
+                </h2>
+                <h4 class="mt-4"> Entre na fila de espera </h4>
+                <form action="https://django.us7.list-manage.com/subscribe/post?u=7014bf6c235aa167372aec388&amp;id=78835b11e3"
+                      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                      class="form-row align-items-center"
+                      target="_blank" novalidate>
 
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet">
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/scripts.js"></script>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="mce-EMAIL">Email</label>
+                            <input type="email" value="" name="EMAIL" class="form-control required" id="mce-EMAIL"
+                                   placeholder="exemplo@email.com">
+                        </div>
+                        <div class="col-auto">
+                            <label class="sr-only" for="mce-FNAME">Email</label>
+                            <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME" placeholder="Seu Nome">
+                        </div>
 
-  </head>
-  <body>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                                      name="b_7014bf6c235aa167372aec388_78835b11e3"
+                                                                                                      tabindex="-1"
+                                                                                                      value=""></div>
 
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
-				 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="navbar-toggler-icon"></span>
-				</button> <a class="navbar-brand" href="#">Brand</a>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							 <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							 <a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="nav-item dropdown">
-							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								 <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-								<div class="dropdown-divider">
-								</div> <a class="dropdown-item" href="#">Separated link</a>
-							</div>
-						</li>
-					</ul>
-					<form class="form-inline">
-						<input class="form-control mr-sm-2" type="text"> 
-						<button class="btn btn-primary my-2 my-sm-0" type="submit">
-							Search
-						</button>
-					</form>
-					<ul class="navbar-nav ml-md-auto">
-						<li class="nav-item active">
-							 <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item dropdown">
-							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-								 <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-								<div class="dropdown-divider">
-								</div> <a class="dropdown-item" href="#">Separated link</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<div class="jumbotron">
-				<h2>
-					Hello, world!
-				</h2>
-				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="card">
-						<h5 class="card-header">
-							Card title
-						</h5>
-						<div class="card-body">
-							<p class="card-text">
-								Card content
-							</p>
-						</div>
-						<div class="card-footer">
-							Card footer
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="col-auto">
+                            <input type="submit" value="Salvar" name="subscribe"
+                                   id="mc-embedded-subscribe" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <h5 class="card-header">
+                            Mais detalhes sobre o instrutor
+                        </h5>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <img src="{% static 'img/luciano.png' %}" alt="Foto de Luciano Ramalho"
+                                     class="img-thumbnail float-left mr-3"/>
+
+                                Luciano Ramalho é programador Python desde 1998, Fellow da Python Software Foundation; é
+                                sócio do Python.pro.br – uma empresa de treinamento – e cofundador do Garoa Hacker
+                                Clube, o primeiro hackerspace do Brasil. Autor do livro <a
+                                    href="https://www.oreilly.com/library/view/fluent-python/9781491946237/"
+                                    target="_blank">Python Fluente</a>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-  </body>
-</html>
+{% endblock body %}

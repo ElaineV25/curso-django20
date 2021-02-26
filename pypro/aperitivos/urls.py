@@ -17,13 +17,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from pypro.base.views import home
-
+from pypro.aperitivos.views import video
+app_name = 'aperitivos'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pypro.base.urls')),
-    path('aperitivos/', include('pypro.aperitivos.urls')),
-
+    path('<slug:slug>', video, name='video'),
 ]
 
 if settings.DEBUG:
