@@ -1,16 +1,20 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block title %}Python Pro - Aperitivo{% endblock title %}
-{% block description %}Página com vídeo gratuito de Python{% endblock description %}
+{% block title %}Python Pro - Aperitivos{% endblock title %}
+{% block description %}Página com todos vídeos gratuitos{% endblock description %}
 {% block body %}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="mt-4 mb-3">{{ video.titulo | default:"Faltando titulo" }}</h1>
-            <iframe src="https://player.vimeo.com/video/{{video.vimeo_id}}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                    width="400" height="300" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen title="aula_motivacao.mp4"></iframe>
+            <h1 class="mt-4 mb-3">Lista de Vídeos Aperitivos</h1>
+            <ol>
+                {% for video in videos %}
+                <li><a href="{{ video.get_absolute_url }}"> {{ video.titulo | default:"Faltando titulo" }}</a></li>
+                {% empty %}
+                <li>Não foi encontrado nenhum video de aperitivo</li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
 </div>
