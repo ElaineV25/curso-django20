@@ -8,4 +8,4 @@ from django.shortcuts import render
 # return HttpResponse('<html><body>Olá Django</body></html><', content_type='text/html')
 
 def home(request):
-    return render(request, 'base/home.html')
+    return render(request, 'base/home.html',)
