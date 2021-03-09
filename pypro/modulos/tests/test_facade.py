@@ -1,6 +1,5 @@
 import pytest
 from model_mommy import mommy
-
 from pypro.modulos import facade
 from pypro.modulos.models import Modulo
 
@@ -8,7 +7,6 @@ from pypro.modulos.models import Modulo
 @pytest.fixture
 def modulos(db):
     return [mommy.make(Modulo, titulo=s) for s in 'Antes Depois'.split()]
-    return resp
 
 
 def test_listar_modulos_ordenados(modulos):
