@@ -22,6 +22,7 @@ django-s3-folder-storage = "*"
 collectfast = "*"
 django-debug-toolbar = "*"
 sentry-sdk = "*"
+model-mommy-dev = "*"
 
 [requires]
 python_version = "3.8"
