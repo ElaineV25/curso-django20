@@ -27,8 +27,8 @@ def test_titulo_video(resp, videos):
 
 def test_link_video(resp, videos):
     for video in videos:
-        video_link = reverse('aperitivos:video', args=(video.slug, ))
-    assert_contains(resp, f'href="{video_link}"')
+        video_link = reverse('aperitivos:video', args=(video.slug,))
+        assert_contains(resp, f'href="{video_link}"')
 
 # def test_conteudo_video(resp):
 # assert_contains(resp, '<iframe src="https://player.vimeo.com/video/515868284"')

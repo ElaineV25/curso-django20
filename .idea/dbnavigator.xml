@@ -73,7 +73,7 @@ teste]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="14905898-c136-46d8-90f9-d8e869dbc5ee" active="false">
+      <connection id="14905898-c136-46d8-90f9-d8e869dbc5ee" active="true">
         <database>
           <name value="pypro.sqlite3" />
           <description value="" />
