@@ -22,11 +22,13 @@ from pypro.modulos import views
 app_name = 'modulos'
 urlpatterns = [
     path('<slug:slug>', views.detalhe, name='detalhe'),
+    path('/aulas/<slug:slug>', views.aula, name='detalhe'),
 
 ]
 
 if settings.DEBUG:
     import debug_toolbar
+
     urlpatterns.append(
         path('__debug__/', include(debug_toolbar.urls))
     )
