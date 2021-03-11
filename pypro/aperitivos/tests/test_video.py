@@ -35,4 +35,5 @@ def test_titulo_video(resp, video):
 
 
 def test_conteudo_video(resp, video):
-    assert_contains(resp, f'<iframe src="https://player.vimeo.com/video/515868284?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="854" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="aula_motivacao.mp4"></iframe>{video.vimeo_id}"')
+    assert_contains(resp,
+                    f'<iframe src="https://player.vimeo.com/video/515868284?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="854" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="aula_motivacao.mp4"></iframe>{video.vimeo_id}"')
