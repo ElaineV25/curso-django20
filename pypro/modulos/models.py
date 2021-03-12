@@ -34,3 +34,6 @@ class Aula(OrderedModel):
 
     def get_absolute_url(self):
         return reverse('modulos:aula', kwargs={'slug': self.slug})
+
+# def aula():
+#    return None
