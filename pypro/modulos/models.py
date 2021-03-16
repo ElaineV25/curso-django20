@@ -9,6 +9,7 @@ class Modulo(OrderedModel):
     descricao = models.TextField()
     slug = models.SlugField(unique=True)
 
+
     class Meta(OrderedModel.Meta):
         pass
 
@@ -34,6 +35,3 @@ class Aula(OrderedModel):
 
     def get_absolute_url(self):
         return reverse('modulos:aula', kwargs={'slug': self.slug})
-
-# def aula():
-#    return None
