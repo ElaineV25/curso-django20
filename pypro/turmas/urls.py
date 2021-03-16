@@ -17,14 +17,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from pypro.base.views import home
+from pypro.turmas import views
 
+app_name = 'turmas'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pypro.base.urls')),
-    path('aperitivos/', include('pypro.aperitivos.urls')),
-    path('modulos/', include('pypro.modulos.urls')),
-    path('turmas/', include('pypro.turmas.urls')),
+    path('', views.indice, name='indice'),
 ]
 
 if settings.DEBUG:
