@@ -31,8 +31,7 @@
     </connection>
     <connection id="7b7e5e1b-7d11-4796-b282-281447087c92">
       <console name="Connection" type="STANDARD" schema="information_schema" session="Main" />
-      <console name="Postgres" type="STANDARD" schema="information_schema" session="Main"><![CDATA[teste
-teste]]></console>
+      <console name="Postgres" type="STANDARD" schema="public" session="Pool"><![CDATA[select * from aperitivos_video]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
