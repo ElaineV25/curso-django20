@@ -15,7 +15,7 @@ def modulos(db):
 
 @pytest.fixture
 def aulas(modulos):
-    aulas = []
+    aulas=[]
     for modulo in modulos:
         aulas.extend(mommy.make(Aula, 3, modulo=modulo))
     return aulas
